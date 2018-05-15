@@ -7,14 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8130D9D12098D6AC00AF9A42 /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8130D9D02098D6AC00AF9A42 /* SignInViewController.swift */; };
 		81753178208D243700550D44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81753177208D243700550D44 /* AppDelegate.swift */; };
 		8175317A208D243700550D44 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81753179208D243700550D44 /* ViewController.swift */; };
 		8175317D208D243700550D44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8175317B208D243700550D44 /* Main.storyboard */; };
 		8175317F208D243700550D44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8175317E208D243700550D44 /* Assets.xcassets */; };
 		81753182208D243700550D44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81753180208D243700550D44 /* LaunchScreen.storyboard */; };
+		8175318A208D246C00550D44 /* workItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81753189208D246C00550D44 /* workItem.swift */; };
+		817FD7C420929F1E00F87BFC /* AbrilFatface-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 817FD7C320929E9F00F87BFC /* AbrilFatface-Regular.ttf */; };
+		817FD7C62092B21100F87BFC /* ManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817FD7C52092B21100F87BFC /* ManagerViewController.swift */; };
+		817FD7C82092B22200F87BFC /* WorkerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817FD7C72092B22200F87BFC /* WorkerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8130D9D02098D6AC00AF9A42 /* SignInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		81753174208D243700550D44 /* WorkManagingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkManagingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81753177208D243700550D44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81753179208D243700550D44 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +28,10 @@
 		8175317E208D243700550D44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81753181208D243700550D44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81753183208D243700550D44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81753189208D246C00550D44 /* workItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = workItem.swift; sourceTree = "<group>"; };
+		817FD7C320929E9F00F87BFC /* AbrilFatface-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AbrilFatface-Regular.ttf"; sourceTree = "<group>"; };
+		817FD7C52092B21100F87BFC /* ManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerViewController.swift; sourceTree = "<group>"; };
+		817FD7C72092B22200F87BFC /* WorkerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +64,51 @@
 		81753176208D243700550D44 /* WorkManagingApp */ = {
 			isa = PBXGroup;
 			children = (
-				81753177208D243700550D44 /* AppDelegate.swift */,
-				81753179208D243700550D44 /* ViewController.swift */,
-				8175317B208D243700550D44 /* Main.storyboard */,
+				8175318D208D254200550D44 /* Controller */,
+				8175318C208D253B00550D44 /* View */,
+				8175318B208D252E00550D44 /* Model */,
 				8175317E208D243700550D44 /* Assets.xcassets */,
 				81753180208D243700550D44 /* LaunchScreen.storyboard */,
 				81753183208D243700550D44 /* Info.plist */,
+				817FD7C220929E8500F87BFC /* fonts */,
 			);
 			path = WorkManagingApp;
+			sourceTree = "<group>";
+		};
+		8175318B208D252E00550D44 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				81753189208D246C00550D44 /* workItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8175318C208D253B00550D44 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8175317B208D243700550D44 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8175318D208D254200550D44 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				81753177208D243700550D44 /* AppDelegate.swift */,
+				81753179208D243700550D44 /* ViewController.swift */,
+				817FD7C52092B21100F87BFC /* ManagerViewController.swift */,
+				817FD7C72092B22200F87BFC /* WorkerViewController.swift */,
+				8130D9D02098D6AC00AF9A42 /* SignInViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		817FD7C220929E8500F87BFC /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				817FD7C320929E9F00F87BFC /* AbrilFatface-Regular.ttf */,
+			);
+			path = fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,6 +173,7 @@
 				81753182208D243700550D44 /* LaunchScreen.storyboard in Resources */,
 				8175317F208D243700550D44 /* Assets.xcassets in Resources */,
 				8175317D208D243700550D44 /* Main.storyboard in Resources */,
+				817FD7C420929F1E00F87BFC /* AbrilFatface-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,7 +184,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				817FD7C62092B21100F87BFC /* ManagerViewController.swift in Sources */,
 				8175317A208D243700550D44 /* ViewController.swift in Sources */,
+				8130D9D12098D6AC00AF9A42 /* SignInViewController.swift in Sources */,
+				817FD7C82092B22200F87BFC /* WorkerViewController.swift in Sources */,
+				8175318A208D246C00550D44 /* workItem.swift in Sources */,
 				81753178208D243700550D44 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
