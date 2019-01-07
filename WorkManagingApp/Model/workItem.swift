@@ -8,6 +8,11 @@
 
 import Foundation
 import UIKit
+import FirebaseFirestore
+
+protocol workDocumentSerializable {
+    init?(dictionary:[String:Any])
+}
 
 struct managerObject {
     let name: String
@@ -16,11 +21,31 @@ struct managerObject {
 }
 
 struct workObject {
-    let jobName: UITextField
-    let jobDescription: UITextField
-    let jobPrice: UITextField
-    let jobLocation: (lat: String, long: String)
+  //  let jobName: UITextField
+    let jobDescription: String
+    let jobPrice: String
+    let jobTime: String
+  //  let jobLocation: (lat: String, long: String)
+    
+    var dicitionary: [String: Any] {
+        return [
+            "jobDescription":jobDescription,
+            "jobPrice":jobPrice,
+            "jobTime":jobTime
+        ]
+    }
 }
 
+extension workObject: workDocumentSerializable {
+    init?(dictionary: [String : Any]) {
+        guard let jobDescription = dictionary["jobDescription"] as? String,
+            let jobPrice = dictionary["jobPrice"] as? String,
+            let jobTime = dictionary["jobTime"] as? String
+            else {
+                return nil
+        }
+        self.init(jobDescription: jobDescription, jobPrice:jobPrice, jobTime:jobTime )
+    }
+}
 
 

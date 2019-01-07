@@ -13,33 +13,19 @@ class ViewController: UIViewController {
     
     let backGround: UIImageView = {
         let b = UIImageView()
-        b.image = UIImage(named: "backGroundView1")
+        b.image = UIImage(named: "firstWindowsBack")
         b.translatesAutoresizingMaskIntoConstraints = false
         return b
     }()
     
+  
     
-    let midView: UIImageView = {
+    let icon: UIImageView = {
         let b = UIImageView()
-        b.image = UIImage(named: "Group")
+        b.image = UIImage(named: "Flask")
         b.translatesAutoresizingMaskIntoConstraints = false
         return b
     }()
-    
-    let bubble: UIImageView = {
-        let b = UIImageView()
-        b.image = UIImage(named: "secondBubble")
-        b.translatesAutoresizingMaskIntoConstraints = false
-        return b
-    }()
-    
-    let bubbleSecond: UIImageView = {
-        let b = UIImageView()
-        b.image = UIImage(named: "thirdBubble")
-        b.translatesAutoresizingMaskIntoConstraints = false
-        return b
-    }()
-    
     
     
     let manageButton: UIButton = {
@@ -93,9 +79,9 @@ class ViewController: UIViewController {
     
    private func setupView(){
         view.addSubview(backGround)
-        view.addSubview(midView)
-        view.addSubview(bubble)
-        view.addSubview(bubbleSecond)
+    
+        view.addSubview(icon)
+    
         view.addSubview(manageButton)
         view.addSubview(workButton)
         
@@ -105,23 +91,15 @@ class ViewController: UIViewController {
         backGround.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
         
         
-        midView.widthAnchor.constraint(equalToConstant: view.frame.width).isActive = true
-        midView.heightAnchor.constraint(equalToConstant: view.frame.width/6).isActive = true
-        midView.topAnchor.constraint(equalTo: view.topAnchor, constant: view.frame.height/2.75).isActive = true
         
+        icon.widthAnchor.constraint(equalToConstant: view.frame.width/5).isActive = true
+        icon.heightAnchor.constraint(equalToConstant: view.frame.width/3).isActive = true
+        icon.topAnchor.constraint(equalTo: view.topAnchor, constant: (view.frame.height*0.1)).isActive = true
+        icon.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -(view.frame.width*0.1)).isActive = true
         
+    
         
-        bubble.widthAnchor.constraint(equalToConstant: view.frame.width/6).isActive = true
-        bubble.heightAnchor.constraint(equalToConstant: view.frame.width/6).isActive = true
-        bubble.bottomAnchor.constraint(equalTo: view.topAnchor, constant: (view.frame.height/2.75)-20).isActive = true
-        bubble.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -(view.frame.width/3.25)).isActive = true
-        
-        bubbleSecond.widthAnchor.constraint(equalToConstant: view.frame.width/6).isActive = true
-        bubbleSecond.heightAnchor.constraint(equalToConstant: view.frame.width/6).isActive = true
-        bubbleSecond.bottomAnchor.constraint(equalTo: view.topAnchor, constant: (view.frame.height/2.75)-90).isActive = true
-        bubbleSecond.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -(view.frame.width/2)).isActive = true
-        
-        manageButton.topAnchor.constraint(equalTo: midView.bottomAnchor, constant: 40).isActive = true
+        manageButton.topAnchor.constraint(equalTo: view.centerYAnchor, constant: -40).isActive = true
         manageButton.widthAnchor.constraint(equalToConstant: view.frame.width*0.8).isActive = true
         manageButton.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -(view.frame.width*0.1)).isActive = true
         manageButton.heightAnchor.constraint(equalToConstant: view.frame.height/6).isActive = true
@@ -136,12 +114,12 @@ class ViewController: UIViewController {
     
     @objc
     func segueToManagerHome(){
-        performSegue(withIdentifier: "showManagerView", sender: self)
+        present(ManagerViewController(), animated: true, completion: nil)
     }
     
     @objc
     func segueToWorkerView(){
-        performSegue(withIdentifier: "showWorkerView", sender: self)
+        present(WorkerViewController(), animated: true, completion: nil)
     }
     
 }
