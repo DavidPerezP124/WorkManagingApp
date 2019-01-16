@@ -108,15 +108,14 @@ class SignInViewController: UIViewController,  UITextFieldDelegate {
         mailTextView.userText.delegate = self
         passwordTextView.userText.delegate = self
         
-      //  view.bringSubview(toFront: stackView)
+     
         viewBackground.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
         viewBackground.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
         viewBackground.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
         viewBackground.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
         
         
-        // stackView.arrangedSubviews[mailTextView, userNameTextView, passwordTextView, repeatPassTextView]
-        
+
         
         view.addSubview(submitButton)
         
@@ -138,7 +137,6 @@ class SignInViewController: UIViewController,  UITextFieldDelegate {
         
         mailTextView.heightAnchor.constraint(equalToConstant: view10).isActive = true
         mailTextView.widthAnchor.constraint(equalToConstant: view.frame.width*0.8).isActive = true
-       // mailTextView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         mailTextView.topAnchor.constraint(equalTo: stackView.topAnchor,  constant: view10).isActive = true
         
       
@@ -183,7 +181,7 @@ class SignInViewController: UIViewController,  UITextFieldDelegate {
     func segueToManaWork(){
         
         
-        
+        //for first sign in authenticates user with firebase
         if mailTextView.userText.text != nil && passwordTextView.userText.text != nil {
             Auth.auth().signIn(withEmail: mailTextView.userText.text!, password: passwordTextView.userText.text!, completion: { (user, error) in
                 if error != nil {
@@ -196,7 +194,7 @@ class SignInViewController: UIViewController,  UITextFieldDelegate {
             })
             
         
-            
+            //if the user is already signed in segues to the manawork main screen
             if let user = Auth.auth().currentUser {
                 self.present(ViewController(), animated: true, completion: nil)
             }

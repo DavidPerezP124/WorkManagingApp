@@ -139,7 +139,8 @@ class SignUpViewController: UIViewController {
     }
     @objc
     func segueToSignIn(){
-        
+        //check is the password and repeat password are the same to continue with the
+        //authentication 
         if passwordTextView.userText.text == repeatPassTextView.userText.text {
             
             Auth.auth().createUser(withEmail: mailTextView.userText.text!, password: passwordTextView.userText.text!) { (user, err) in

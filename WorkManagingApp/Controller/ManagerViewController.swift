@@ -143,9 +143,7 @@ class ManagerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //  view.backgroundColor = .red
         setupView()
-        // Do any additional setup after loading the view.
     }
     
     private func setupView(){
@@ -230,7 +228,7 @@ class ManagerViewController: UIViewController {
         messageButton.widthAnchor.constraint(equalToConstant: view.frame.width/5).isActive = true
         messageButton.heightAnchor.constraint(equalToConstant: view.frame.width/5).isActive = true
         messageButton.rightAnchor.constraint(equalTo: jobsBackLabel.rightAnchor).isActive = true
-        
+        //MARK: tableview contraints
         tableViewController.view.topAnchor.constraint(equalTo: jobsBackLabel.topAnchor).isActive = true
          tableViewController.view.bottomAnchor.constraint(equalTo: jobsBackLabel.bottomAnchor).isActive = true
          tableViewController.view.rightAnchor.constraint(equalTo: jobsBackLabel.rightAnchor).isActive = true
